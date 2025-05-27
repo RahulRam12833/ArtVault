@@ -1,33 +1,29 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './categories.styles.scss'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App=()=> {
+  
+  const categories=[
+    {id:1, name: 'Paintings'},
+    {id: 2, name: 'Sculptures'},  
+    {id: 3, name: 'Photography'},
+    {id: 4, name: 'Digital Art'},
+    {id: 5, name: 'Drawings'},
+  ]
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className='categories-container'>
+      {categories.map(({name}) => (
+        <div className='category-container'>
+            {/* <img/>*/}
+            <div className='category-body-container'>
+              <h2>{name}</h2>
+              <p>Shop Now</p>
+            </div>
+          </div>
+         ))}    
+    </div>
     </>
   )
 }
