@@ -1,14 +1,16 @@
 import { Link, Outlet } from 'react-router-dom';
-
+import crown from '/src/assets/crown.svg';
+import './navigation.styles.scss';
 
 const Navbar=()=>{
   return (<>
       <div className='navbar'>
         <Link className='logo-container' to="/">
-            <div>Logo</div>
+            <img className='logo' src={crown} />
         </Link>
         <div className='nav-links-container'>
           <Link className='nav-link' to='/shop'>SHOP</Link>
+          <Link className='nav-link' to='/signIn'>SIGN IN</Link>
         </div>
       </div>
       <Outlet />
