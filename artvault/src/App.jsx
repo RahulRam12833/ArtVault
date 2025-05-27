@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import './categories.styles.scss'
-import CategoryItem from './components/category-item/category-item-component'
 import Category from './components/category/category.component'
 
 const App=()=> {
