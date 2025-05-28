@@ -6,14 +6,16 @@ const Navbar=()=>{
   return (<>
       <div className='navbar'>
         <Link className='logo-container' to="/">
-            <img className='logo' src={crown} />
+            <img className='logo' src={crown} /> 
+            <h2 className='logo-text'>ART VAULT</h2>
         </Link>
+        
         <div className='nav-links-container'>
           <Link className='nav-link' to='/shop'>SHOP</Link>
           <Link className='nav-link' to='/signIn'>SIGN IN</Link>
         </div>
       </div>
-      <Outlet />
+      <Outlet />    
       </>)
 }
 

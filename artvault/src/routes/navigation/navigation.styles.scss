@@ -4,11 +4,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    
     .logo-container {
         height: 100%;
-        width: 70px;
+        width: 300px;
         padding: 10px;  
+        display:flex;
+        align-items: center;
+        gap: 10px;
+        color:black
+
     }
 
     .nav-links-container {
@@ -23,7 +28,7 @@
             padding: 10px 15px;
             cursor: pointer;
             font-weight: 500;
-            color: #646cff;
+            color: rgb(0, 0, 0);
             
 
             &:hover {
