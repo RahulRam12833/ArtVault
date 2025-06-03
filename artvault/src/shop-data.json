@@ -1,0 +1,59 @@
+[
+    {
+    "id": 1,
+    "name": "Painting 1",
+    "description": "A beautiful painting of a sunset.",
+    "price": 100,
+    "image": "https://example.com/images/painting1.jpg",
+    "category": "paintings"
+   },
+   {
+    "id": 2,
+    "name": "Sculpture 1",
+    "description": "A modern sculpture made of bronze.",
+    "price": 250,
+    "image": "https://example.com/images/sculpture1.jpg",
+    "category": "sculptures"
+   },
+   {
+    "id": 3,
+    "name": "Photography 1",
+    "description": "A stunning photograph of a mountain landscape.",
+    "price": 75,
+    "image": "https://example.com/images/photography1.jpg",
+    "category": "photography"
+   },
+   {
+    "id": 4,
+    "name": "Painting 2",
+    "description": "An abstract painting with vibrant colors.",
+    "price": 150,
+    "image": "https://example.com/images/painting2.jpg",
+    "category": "paintings"
+   },
+   {
+    "id": 5,
+    "name": "Sculpture 2",
+    "description": "A contemporary sculpture made of marble.",
+    "price": 300,
+    "image": "https://example.com/images/sculpture2.jpg",
+    "category": "sculptures"
+   },
+   {
+    "id": 6,
+    "name": "Digital art 1",
+    "description": "A black and white photograph of a city skyline.",
+    "price": 80,
+    "image": "https://example.com/images/photography2.jpg",
+    "category": "digital art"
+   },
+   {
+    "id": 7,
+    "name": "drawing 1",
+    "description": "A detailed pencil drawing of a flower.",
+    "price": 50,
+    "image": "https://example.com/images/drawing1.jpg",
+    "category": "drawings"
+   }
+
+]
