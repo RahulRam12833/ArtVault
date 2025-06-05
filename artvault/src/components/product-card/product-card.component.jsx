@@ -11,7 +11,7 @@ const ProductCard=({product})=>{
     const addProductToCart = () => addItemsToCart(product);
     return(
         <div className='product-card-container'>
-            <img src={imageUrl} alt={`${name}`}/>
+            <img src={imageUrl} alt={`${name}`} loading="lazy"/>
             <div className='product-details'>
                 <span className='product-name'>{name}</span>
                 <span className='product-price'>AUD${price}</span>
