@@ -1,15 +1,15 @@
-import './category-item.styles.scss';
+import { CategoryBodyContainer, CategoryItemContainer } from './category-item.styles';
 
 const CategoryItem = ({ category}) => {
     return(
-        <div  className='category-container'>
+        <CategoryItemContainer>
             
-            <img src={category.imageUrl} alt={category.name} className='background-image' />
-            <div className='category-body-container'>
+            <img src={category.imageUrl} alt={category.name}  />
+            <CategoryBodyContainer>
               <h2>{category.name}</h2>
               <p>Shop Now</p>
-            </div>
-          </div>
+            </CategoryBodyContainer>
+          </CategoryItemContainer>
     )
 }
 

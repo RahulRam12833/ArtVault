@@ -10,7 +10,7 @@ import { useContext } from 'react';
 
 import { signOutUser } from '../../utilities/firebase/firebase.utils';
 
-import './navigation.styles.scss';
+import {NavbarContainer,LogoContainer,NavLinksContainer,NavLink} from './navigation.styles';
 
 const Navbar=()=>{
   const { currentUser} = useContext(UserContext);
@@ -18,19 +18,19 @@ const Navbar=()=>{
 
 
   return (<>
-      <div className='navbar'>
-        <Link className='logo-container' to="/">
+      <NavbarContainer>
+        <LogoContainer to="/">
             <img className='logo' src={crown} /> 
             <h2 className='logo-text'>ART VAULT</h2>
-        </Link>
+        </LogoContainer>
         
-        <div className='nav-links-container'>
-          <Link className='nav-link' to='/shop'>SHOP</Link>
-          {currentUser?(<span className='nav-link' onClick={signOutUser}>SIGN OUT</span>):(<Link className='nav-link' to='/auth'>SIGN IN</Link>)}
+        <NavLinksContainer>
+          <NavLink  to='/shop'>SHOP</NavLink>
+          {currentUser?(<NavLink as='span' onClick={signOutUser}>SIGN OUT</NavLink>):(<NavLink  to='/auth'>SIGN IN</NavLink>)}
           <CartIcon/>
-        </div>
+        </NavLinksContainer>
         {isCartOpen && <CartDropdown />} 
-      </div>
+      </NavbarContainer>
       
       <Outlet />    
       </>)
