@@ -1,4 +1,4 @@
-import Category from '../../components/category/category.component';
+import Directory from "../../components/directory/directory.component"
 
 
 const Home=()=> {
@@ -13,7 +13,7 @@ const Home=()=> {
 
   return (
     <>
-        <Category categories={categories} />
+        <Directory categories={categories} />
         
     </>
   )
