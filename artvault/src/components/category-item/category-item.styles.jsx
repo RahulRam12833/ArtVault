@@ -1,4 +1,6 @@
-.category-container {
+import styled from 'styled-components';
+
+export const CategoryItemContainer = styled.div`
   min-width: 30%;
   height: 300px;
   flex: 1 1 auto;
@@ -12,14 +14,12 @@
   &:hover {
     cursor: pointer;
 
-    & .background-image {
+    & img {
       transform: scale(1.1);
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
-    & .category-body-container {
-      opacity: 0.9;
-    }
+    
   }
 
   &.large {
@@ -34,7 +34,7 @@
     margin-left: 7.5px;
   }
 
-  .background-image {
+  img {
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -42,8 +42,8 @@
     object-fit: cover;
 
   }
-
-  .category-body-container {
+`
+export const CategoryBodyContainer = styled.div`
     height: 90px;
     padding: 0 25px;
     display: flex;
@@ -66,5 +66,11 @@
       font-weight: lighter;
       font-size: 16px;
     }
-  }
-}
+
+    &:hover {
+      opacity: 0.9;
+      
+    }
+
+
+`

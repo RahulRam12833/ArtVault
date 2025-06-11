@@ -1,0 +1,59 @@
+[
+    {
+    "id": 1,
+    "name": "Christmas Roses",
+    "description": "Christmas Roses",
+    "price": 100,
+    "imageUrl": "https://images.unsplash.com/photo-1584285405368-5cec784a5025",
+    "category": "paintings"
+   },
+   {
+    "id": 2,
+    "name": "Bronze Flower",
+    "description": "A modern sculpture made of bronze.",
+    "price": 250,
+    "imageUrl": "https://images.unsplash.com/photo-1732690989614-563109e10322",
+    "category": "sculptures"
+   },
+   {
+    "id": 3,
+    "name": "Mountain Seascape",
+    "description": "A stunning photograph of a mountain landscape.",
+    "price": 75,
+    "imageUrl": "https://images.unsplash.com/photo-1448807763355-ec6890f561b6?",
+    "category": "photography"
+   },
+   {
+    "id": 4,
+    "name": "Green Leaves",
+    "description": "Green Leaves",
+    "price": 150,
+    "imageUrl": "https://images.unsplash.com/photo-1535845073244-ff070b979368",
+    "category": "paintings"
+   },
+   {
+    "id": 5,
+    "name": "Equinox",
+    "description": "A contemporary sculpture made of stone.",
+    "price": 300,
+    "imageUrl": "https://images.unsplash.com/photo-1616924451558-82eaa3aa7106",
+    "category": "sculptures"
+   },
+   {
+    "id": 6,
+    "name": "Abstract Red and Orange",
+    "description": "Abstract red and orange.",
+    "price": 80,
+    "imageUrl": "https://images.unsplash.com/photo-1633596683562-4a47eb4983c5",
+    "category": "digital art"
+   },
+   {
+    "id": 7,
+    "name": "Attraction",
+    "description": "Man and woman attraction.",
+    "price": 50,
+    "imageUrl": "https://images.unsplash.com/photo-1688648502474-85e51fd80aab",
+    "category": "drawings"
+   }
+
+]
