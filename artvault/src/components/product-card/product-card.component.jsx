@@ -7,8 +7,8 @@ import Button,{BUTTON_TYPES} from '../button/button.component';
 const ProductCard=({product})=>{
     const {name, imageUrl, price} = product;
 
-    const { addItemsToCart } = useContext(CartContext);
-    const addProductToCart = () => addItemsToCart(product);
+    const { addItemToCart } = useContext(CartContext);
+    const addProductToCart = () => addItemToCart(product);
     return(
         <ProductCardContainer>
             <img src={imageUrl} alt={`${name}`} loading="lazy"/>

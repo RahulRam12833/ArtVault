@@ -5,8 +5,8 @@ import {CheckoutItemContainer,ImageContainer,ItemDetails,Quantity,Arrow,Value,Re
 
 const CheckoutItem = ({ cartitem}) => {
     const { name, imageUrl, price, quantity } = cartitem;
-     const { addItemsToCart,
-            removeItemsFromCart,
+     const { addItemToCart,
+            removeItemFromCart,
             clearItemFromCart} = useContext(CartContext);
    
    return(
@@ -16,9 +16,9 @@ const CheckoutItem = ({ cartitem}) => {
         </ImageContainer>
         <ItemDetails>{name}</ItemDetails>
         <Quantity>
-            <Arrow onClick={() => removeItemsFromCart(cartitem)}>&#10094;</Arrow>
+            <Arrow onClick={() => removeItemFromCart(cartitem)}>&#10094;</Arrow>
             <Value>{quantity}</Value>
-            <Arrow onClick={() => addItemsToCart(cartitem)}>&#10095;</Arrow>
+            <Arrow onClick={() => addItemToCart(cartitem)}>&#10095;</Arrow>
         </Quantity>
         <ItemDetails>${price}</ItemDetails>
         <RemoveButton onClick={() => clearItemFromCart(cartitem)}>
