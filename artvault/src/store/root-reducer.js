@@ -6,5 +6,4 @@ import { categoriesReducer } from "./categories/category.reducer";
 export const rootReducer = combineReducers({
     user: userReducer,
     categories: categoriesReducer,
-    // Add other reducers here as needed
 })
