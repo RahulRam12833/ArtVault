@@ -25,6 +25,7 @@ const middleWares = [import.meta.env.MODE ==='development' && logger].filter(Boo
 
 export const store = configureStore({
     reducer: rootReducer,
+    middleware:(getDefaultMiddleware)=>getDefaultMiddleware().concat(middleWares),
 })
 // export const store = createStore(persistedReducer,undefined, composeEnhancers)
 // export const persistor = persistStore(store);
