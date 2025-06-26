@@ -6,7 +6,7 @@ import { getCategoriesandDocs } from "../../utilities/firebase/firebase.utils";
 
 import CategoriesPreview from "../categories-preview/categories-preview.component";
 import Category from "../category/category.component";
-import { setCategories } from "../../store/categories/category.action";
+import { setCategories } from "../../store/categories/category.reducer"
 
 
 const Shop=()=>{
