@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 import { useSelector,useDispatch } from "react-redux";
 import { selectCartCount,selectIsCartOpen } from "../../store/cart/cart.selector";
-import { setIsCartOpen } from "../../store/cart/cart.action";
+import { setIsCartOpen } from "../../store/cart/cart.reducer";
 
 
 const CartIcon=()=>{
