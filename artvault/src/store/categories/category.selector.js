@@ -17,3 +17,8 @@ export const selectCategoriesMap = createSelector(
       return acc;
     }, {})
 )
+
+export const selectCategoriesStatus = createSelector(
+  [selectCategoriesReducer],
+  (categoriesSlice) => categoriesSlice.status
+);
