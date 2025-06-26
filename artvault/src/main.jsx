@@ -11,11 +11,11 @@ import './index.scss'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
         <BrowserRouter>
             <App />
         </BrowserRouter>
-      </PersistGate>
+      {/* </PersistGate> */}
     </Provider>
   </StrictMode>,
 )
