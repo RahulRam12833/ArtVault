@@ -73,7 +73,8 @@ export const createUserDocumentFromAuth = async (userAuth,additionInformation) =
   // If user data does not exist, create it
 
   if (!userSnapshot.exists()) {
-    const {displayName, email} = userAuth;
+    const email = userAuth.email;
+    const displayName = userAuth.displayName || additionInformation.displayName || null
     const createdAt = new Date();
 
     try {
