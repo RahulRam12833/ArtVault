@@ -6,19 +6,25 @@ export const CartItemContainer = styled.div`
     height: 100px;
     margin-bottom: 15px;
 
-    img {
-        width:100px;
-        height:100px;
-        object-fit: scale-down;
-    }
+
 `
    
+export const ImageContainer = styled.div`
+    width: 60%;
+    height: 130px;
+    padding-right: 15px;
+
+    img {
+      width: 100%;
+      height: 70%;
+    }
+`
 
 export const ItemDetails = styled.div`
-        width: 70%;
+        width: 60%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        
 
         span {
             font-size: 14px;
