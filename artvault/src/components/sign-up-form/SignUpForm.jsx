@@ -5,7 +5,7 @@ import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
 import { createAuthUserWithEmailAndPwd ,createUserDocumentFromAuth } from "../../utilities/firebase/firebase.utils";
-
+import { updateProfile } from "firebase/auth";
 import {SignUpFormContainer} from './sign-up-form.styles';
 
 const defaultFormFields = {
@@ -37,8 +37,12 @@ const SignUpForm = () => {
         try {
             // Create a new user with email and password
             const { user } = await createAuthUserWithEmailAndPwd(email, password);
+
+            // Update displayName in Firebase Auth user profile
+            await updateProfile(user, { displayName });
+
             // You can add additional logic here, like creating a user document in Firestore
-            await createUserDocumentFromAuth(user, { displayName });
+            await createUserDocumentFromAuth(user, {displayName });
 
             
             // Reset the form fields after successful signup
