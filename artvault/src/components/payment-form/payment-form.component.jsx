@@ -4,9 +4,9 @@ import {useSelector} from 'react-redux'
 
 import { selectCartTotal } from '../../store/cart/cart.selector'
 import { selectCurrentUser } from '../../store/user/user.selector'
-import Button,{BUTTON_TYPES} from '../button/button.component'
+import {BUTTON_TYPES} from '../button/button.component'
 
-import {PaymentFormContainer,FormContainer} from './payment-form.styles'
+import {PaymentFormContainer,FormContainer,PaymentButton} from './payment-form.styles'
 const PaymentForm=()=>{
     const stripe=useStripe();
     const elements=useElements();
@@ -61,7 +61,7 @@ const PaymentForm=()=>{
             <FormContainer>
                 <h2>Credit Cart Payment:</h2>
                  <CardElement options={{hidePostalCode:true}}/>
-                 <Button disabled={isProcessingPayment} buttonType={BUTTON_TYPES.inverted} onClick={paymentHandler}>Pay Now</Button>
+                 <PaymentButton isLoading={isProcessingPayment} buttonType={BUTTON_TYPES.inverted} onClick={paymentHandler}>Pay Now</PaymentButton>
             </FormContainer>
         </PaymentFormContainer>
     )
