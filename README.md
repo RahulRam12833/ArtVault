@@ -1,6 +1,6 @@
 # 🛒ArtVault
 
-A modern full-stack e-commerce application built with **React**, **Tailwind**, **Firebase**, and **Stripe**. The project demonstrates responsive UI development, state management, authentication, cloud services, and secure online payments.
+A modern full-stack e-commerce application built with **React**, **Tailwind**, **Firebase**, and **Stripe** to buy art. The project demonstrates responsive UI development, state management, authentication, cloud services, and secure online payments.
 
 ---
 
