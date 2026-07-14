@@ -15,8 +15,7 @@ A modern full-stack e-commerce application built with **React**, **Tailwind**, *
 - Add, remove, and update cart items
 - Persistent shopping cart
 - Secure Stripe checkout
-- Loading and error handling
-- Toast notifications
+
 
 ---
 
@@ -40,22 +39,8 @@ A modern full-stack e-commerce application built with **React**, **Tailwind**, *
 
 ---
 
-## 📚 What I Learned
 
-- Building scalable React applications
-- State management with Redux Toolkit
-- Component-based architecture
-- Firebase Authentication
-- Cloud database using Firestore
-- Image storage with Firebase Storage
-- Payment processing using Stripe
-- Responsive UI development
-- React Hooks
-- API integration
-- Error handling
-- Clean project structure
-
----
+## Future Improvements
 
 - Product reviews
 - Wishlist
