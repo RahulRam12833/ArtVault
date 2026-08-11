@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { motion } from 'motion/react';
 export const CategoryItemContainer = styled.div`
   min-width: 30%;
   height: 300px;
@@ -74,3 +74,4 @@ export const CategoryBodyContainer = styled.div`
 
 
 `
+

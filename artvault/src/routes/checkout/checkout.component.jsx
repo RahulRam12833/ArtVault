@@ -14,12 +14,14 @@ const Checkout=()=> {
     if (cartItems.length === 0) {
         return (
             <CheckoutContainer>
-                <h1>Your cart is empty</h1>
+                <h1>Your collection awaits</h1>
+                <p>Your cart is currently empty.</p>
             </CheckoutContainer>
         );
     }
     return (
         <CheckoutContainer>
+            <h2>YOUR COLLECTION</h2>
              <CheckoutHeader>
                 <HeaderBlock>
                     <span>Product</span>
