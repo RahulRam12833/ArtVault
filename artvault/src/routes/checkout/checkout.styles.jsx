@@ -5,24 +5,39 @@ export const CheckoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width:55%;
-  margin:50px auto 0;
+  width:min(1000px,90%);
+  margin:60px auto 0;
 `
 export const CheckoutHeader = styled.div`
-    width:75%;
+    width:100%;
     display: flex;
     justify-content: space-between;
-    border-bottom:1px solid grey;
-    padding: 10px 0;
+    border-bottom:1px solid #d8d1c5;
+    padding: 12px 0;
+
+    color:#625d55;
+
+    font-family:'DM Sans', sans-serif;
+    font-size:0.75rem;
+    font-weight:600;
+
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+
 `
 
 export const HeaderBlock = styled.div`
-    text-transform: uppercase;
-    font-weight: bold;    
+   display:flex;
+   align-items:center;  
   `
 
 export const TotalAmount = styled.div`
     margin-top: 30px;
     margin-left: auto;
-    font-size: 36px;
+
+    font-family:'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight:600;
+
+    color:#292622;
 `

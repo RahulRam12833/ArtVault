@@ -1,16 +1,15 @@
 import { Outlet } from 'react-router-dom';
-import crown from '/src/assets/crown.svg';
 import { useSelector } from 'react-redux';
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
-
+import vangogh from "../../assets/vangogh.png"
 
 
 import { selectCurrentUser } from '../../store/user/user.selector';
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 import { signOutUser } from '../../utilities/firebase/firebase.utils';
 
-import {NavbarContainer,LogoContainer,NavLinksContainer,NavLink} from './navigation.styles';
+import {NavbarContainer,LogoContainer,NavLinksContainer,NavLink,LogoText,LogoImage} from './navigation.styles';
 
 const Navbar=()=>{
   const currentUser = useSelector(selectCurrentUser);
@@ -18,12 +17,12 @@ const Navbar=()=>{
   return (<>
       <NavbarContainer>
         <LogoContainer to="/">
-            <img className='logo' src={crown} /> 
-            <h2 className='logo-text'>ART VAULT</h2>
+            <LogoImage src={vangogh} /> 
+            <LogoText >ArtVault</LogoText>
         </LogoContainer>
         
         <NavLinksContainer>
-          <NavLink  to='/shop'>SHOP</NavLink>
+          <NavLink  to='/shop'>EXPLORE</NavLink>
           {currentUser?(<NavLink as='span' onClick={signOutUser}>SIGN OUT</NavLink>):(<NavLink  to='/auth'>SIGN IN</NavLink>)}
           <CartIcon/>
         </NavLinksContainer>
