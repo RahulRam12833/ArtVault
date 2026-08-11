@@ -29,7 +29,7 @@ export const DirectoryEyebrow=styled.p`
 
 `;
 
-export const DirectoryTitle=styled.h2`
+export const DirectoryTitle=styled(motion.h2)`
   margin:0;
 
   font-family:'Playfair Display', serif;

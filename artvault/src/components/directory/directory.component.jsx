@@ -18,7 +18,13 @@ const Directory = () => {
                     01 / The COLLECTION
                 </DirectoryEyebrow>
 
-                <DirectoryTitle>
+                <DirectoryTitle initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.4 }}
+    transition={{
+      duration: 0.7,
+      ease: 'easeOut',
+    }}>
                     Explore art across
                     <br/>
                     different mediums.

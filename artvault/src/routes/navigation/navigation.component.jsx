@@ -10,6 +10,7 @@ import { selectIsCartOpen } from '../../store/cart/cart.selector';
 import { signOutUser } from '../../utilities/firebase/firebase.utils';
 
 import {NavbarContainer,LogoContainer,NavLinksContainer,NavLink,LogoText,LogoImage} from './navigation.styles';
+import Footer from '../../components/footer/footer.component';
 
 const Navbar=()=>{
   const currentUser = useSelector(selectCurrentUser);
@@ -30,6 +31,8 @@ const Navbar=()=>{
       </NavbarContainer>
       
       <Outlet />    
+
+      <Footer/>
       </>)
 }
 
