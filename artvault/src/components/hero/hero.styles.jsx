@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 export const HeroContainer=styled.section`
   min-height:calc(100vh - 80px);
-
+  position:relative;
   padding:60px 7%;
 
   display:grid;
@@ -115,5 +116,26 @@ export const HeroArtwork = styled.div`
   @media (max-width: 768px) {
     max-width: 450px;
     margin: 0 auto;
+  }
+`;
+
+export const BrushCircle = styled(motion.img)`
+  position: absolute;
+
+  width: clamp(160px, 18vw, 240px);
+  height: auto;
+
+  left: 38%;
+  top: 1%;
+
+  z-index: 0;
+  pointer-events: none;
+
+  @media (max-width: 900px) {
+    left: auto;
+    right: 0%;
+    top: 2%;
+
+    width: clamp(120px, 28vw, 180px);
   }
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "motion/react";
 
 export const DirectoryContainer = styled.section`
   padding:120px 7%;
@@ -42,7 +43,20 @@ export const DirectoryList=styled.div`
  border-top:1px solid var(--border);
 `;
 
-export const CategoryRow = styled.div`
+
+
+export const CategoryName = styled.span`
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+`;
+
+export const CategoryNumber = styled.span`
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--muted);
+`;
+
+export const CategoryRow = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,13 +78,15 @@ export const CategoryRow = styled.div`
   }
 `;
 
-export const CategoryName = styled.span`
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 3vw, 3rem);
+export const CategoryArrowWrapper = styled(motion.span)`
+  display: inline-flex;
+  width: 36px;
+  overflow: hidden;
+  margin-left: 12px;
 `;
 
-export const CategoryNumber = styled.span`
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
-  color: var(--muted);
+export const CategoryArrow = styled(motion.img)`
+  width: 36px;
+  height: auto;
+  flex-shrink: 0;
 `;
