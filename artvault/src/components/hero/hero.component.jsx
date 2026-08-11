@@ -11,11 +11,11 @@ const Hero = () => {
   alt=""
   
   initial={{ opacity: 0, scale: 0.9, rotate: -8 }}
-  animate={{
-    opacity: 1,
+  
+  whileInView={{  opacity: 1,
     scale: 1,
-    rotate: 0,
-  }}
+    rotate: 0,}}
+    viewport={{ once: false, amount: 0.4 }}
   transition={{
     duration: 0.8,
     ease: 'easeOut',
@@ -27,7 +27,8 @@ const Hero = () => {
 
             <motion.h1
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.4 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
         >
         <HeroTitle>
@@ -50,8 +51,9 @@ const Hero = () => {
 
         <motion.div 
         initial={{ opacity: 0, y: 20, scale: 0.98 }}
-  animate={{ opacity: 1, y: 0, scale: 1 }}
-  transition={{ duration: 0.9, ease: 'easeOut', delay: 0.4 }}>
+   whileInView={{ opacity: 1, y: 10 }}
+    viewport={{ once: false, amount: 0.4 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}>
             <HeroArtwork>
             <img src={arthero} art="Artwork"/>
         </HeroArtwork>
