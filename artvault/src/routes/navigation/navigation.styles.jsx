@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const NavbarContainer = styled.nav`
+  position: sticky;
+  top: 0;
+  z-index: 1000;  
+  
   width: 100%;
   height: 72px;
   padding: 0 5%;
@@ -13,8 +17,7 @@ export const NavbarContainer = styled.nav`
   background: var(--background);
   color: var(--text);
 
-  position:relative;
-  z-index:10;
+  border-bottom: 1px solid var(--border);
 `;
 
 export const LogoContainer = styled(Link)`
