@@ -1,20 +1,21 @@
 import {useNavigate} from 'react-router-dom';
 
-import { CategoryBodyContainer, CategoryItemContainer } from './category-item.styles';
+import { CategoryRow,CategoryName,CategoryNumber } from '../directory/directory.styles';
 
-const CategoryItem = ({ category}) => {
-  const {imageUrl,name,route} = category;
+const CategoryItem = ({ category,index}) => {
+  const {name,route} = category;
   const navigate= useNavigate();
 
   const onNavigateHandler = () => navigate(route);
+  
     return(
-        <CategoryItemContainer onClick={onNavigateHandler}>
-            <img src={imageUrl} alt={name}  />
-            <CategoryBodyContainer>
-              <h2>{name}</h2>
-              <p>Shop Now</p>
-            </CategoryBodyContainer>
-          </CategoryItemContainer>
+        <CategoryRow onClick={onNavigateHandler}>
+           <CategoryName>{name}</CategoryName>
+
+           <CategoryNumber>
+            {String(index+1).padStart(2,'0')}
+           </CategoryNumber>
+          </CategoryRow>
     )
 }
 
