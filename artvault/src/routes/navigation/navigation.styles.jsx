@@ -28,8 +28,8 @@ export const LogoContainer = styled(Link)`
 `;
 
 export const LogoImage=styled.img`
-  width:38px;
-  height:38px;
+  width:42px;
+  height:42px;
   object-fit:cover;
 
   border-radius:50%;
@@ -40,7 +40,7 @@ export const LogoText=styled.h2`
   margin:0;
 
   font-family:'Playfair Display',serif;
-  font-size:1.5rem;
+  font-size:2.5rem;
   fomt-weight:600;
   leter-spacing:-0.02em;
 `;
@@ -59,7 +59,7 @@ export const NavLink = styled(Link)`
   color: var(--muted);
 
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 500;
 
   text-transform: uppercase;
