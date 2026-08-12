@@ -16,11 +16,21 @@ const CategoriesPreview=()=>{
   {
     return <p>Something went wrong!!!</p>
   }
+  const categoryOrder = [
+  "paintings",
+  "photography",
+  "sculptures",
+  "drawings",
+  "digital",
+];
+
   return (
     <>    
       {
-        Object.keys(categoriesMap).map((title)=>{
-          const products=categoriesMap[title];
+         categoryOrder.map((title) => {
+        const products = categoriesMap[title];
+
+        if (!products) return null;
           return (
           <CategoryPreview key={title} title={title} products={products}/>
           )

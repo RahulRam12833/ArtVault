@@ -29,7 +29,7 @@ const Category = ()=> {
 
     return(
         <>
-        <CategoryTitle>{category.toUpperCase()}</CategoryTitle>
+        <CategoryTitle>{category}</CategoryTitle>
         <CategoryContainer>
             {products &&
                 products.map((product)=><ProductCard key={product.id} product={product} />)
