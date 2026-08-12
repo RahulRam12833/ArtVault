@@ -22,7 +22,7 @@ export const ProductImageContainer = styled.div`
 
   button {
     position: absolute;
-    top: 50%;
+    bottom: 10%;
     left: 50%;
 
     width: auto;
@@ -44,7 +44,7 @@ export const ProductImageContainer = styled.div`
 
   &:hover {
     img {
-      opacity: 0.75;
+      opacity: 0.80;
     }
 
     button {
