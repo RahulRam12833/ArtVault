@@ -1,43 +1,77 @@
 import styled from 'styled-components';
 
+export const CheckoutContainer = styled.main`
+  width: min(1200px, 90%);
+  margin: 80px auto 120px;
 
-export const CheckoutContainer = styled.div`
+  color: var(--text);
+`;
+
+export const CheckoutIntro = styled.header`
+  margin-bottom: 60px;
+`;
+
+export const CheckoutTitle = styled.h1`
+  margin: 0 0 15px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+
+  color: var(--text);
+`;
+
+export const CheckoutSubtitle = styled.p`
+  margin: 0;
+
+  max-width: 500px;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+
+  color: var(--muted);
+`;
+
+export const CheckoutLayout = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.8fr);
+  gap: 70px;
+
+  align-items: start;
+
+  @media (max-width: 850px) {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+`;
+
+export const CollectionSection = styled.section`
+  width: 100%;
+`;
+
+export const CollectionHeader = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width:min(1000px,90%);
-  margin:60px auto 0;
-`
-export const CheckoutHeader = styled.div`
-    width:100%;
-    display: flex;
-    justify-content: space-between;
-    border-bottom:1px solid #d8d1c5;
-    padding: 12px 0;
+  justify-content: space-between;
+  align-items: baseline;
 
-    color:#625d55;
+  padding-bottom: 14px;
+  margin-bottom: 0;
 
-    font-family:'DM Sans', sans-serif;
-    font-size:0.75rem;
-    font-weight:600;
+  border-bottom: 1px solid var(--border);
 
-    text-transform:uppercase;
-    letter-spacing:0.08em;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
 
-`
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 
-export const HeaderBlock = styled.div`
-   display:flex;
-   align-items:center;  
-  `
+  color: var(--muted);
+`;
 
-export const TotalAmount = styled.div`
-    margin-top: 30px;
-    margin-left: auto;
-
-    font-family:'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight:600;
-
-    color:#292622;
-`
+export const CollectionCount = styled.span`
+  font-weight: 400;
+`;

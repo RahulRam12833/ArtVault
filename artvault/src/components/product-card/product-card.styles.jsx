@@ -1,56 +1,75 @@
 import styled from "styled-components";
 
 export const ProductCardContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 500px;
-  height:450px;
-  margin: 10px auto;
+`;
+
+export const ProductImageContainer = styled.div`
   position: relative;
+  width: 100%;
+  overflow: hidden;
 
-
-  img{
+  img {
+    display: block;
     width: 100%;
-    height: 400px;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
-    margin-bottom: 5px;
+
+    transition: opacity 0.3s ease;
   }
 
   button {
-    width: 50%;
-    opacity: 0.7;
     position: absolute;
-    top: 275px;
-    left: 80px;
-    display: none;
+    bottom: 10%;
+    left: 50%;
+
+    width: auto;
+    min-width: 130px;
+    height: 42px;
+
+    padding: 0 20px;
+
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    pointer-events: none;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+
+    transition: opacity 0.25s ease;
   }
 
   &:hover {
     img {
-      opacity: 0.8;
+      opacity: 0.80;
     }
 
     button {
-      opacity: 0.85;
-      display: flex;
+      opacity: 1;
+      pointer-events: auto;
     }
   }
-`
+`;
+
 export const Footer = styled.div`
-  width: 85%;
-  height: 5%;
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
-`
+  align-items: baseline;
+
+  padding-top: 12px;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+`;
 
 export const Name = styled.span`
-  width: 100%;
-  margin-bottom: 15px;
-`
+  color: var(--text);
+`;
 
 export const Price = styled.span`
-  width: 10%;
-`
-
+  color: var(--muted);
+  white-space: nowrap;
+`;

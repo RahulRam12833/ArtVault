@@ -1,28 +1,73 @@
-import {useDispatch} from 'react-redux';
-import { addItemToCart,removeItemFromCart,clearItemFromCart } from '../../store/cart/cart.reducer';
-import {CheckoutItemContainer,ImageContainer,ItemDetails,Quantity,Arrow,Value,RemoveButton} from "./checkout-item.styles";
+import { useDispatch } from 'react-redux';
 
-const CheckoutItem = ({ cartitem}) => {
-    const { name, imageUrl, price, quantity } = cartitem;
-    const dispatch = useDispatch();
-    
-   return(
+import {
+  addItemToCart,
+  removeItemFromCart,
+  clearItemFromCart,
+} from '../../store/cart/cart.reducer';
+
+import {
+  CheckoutItemContainer,
+  ImageContainer,
+  ItemDetails,
+  ItemName,
+  ItemType,
+  Quantity,
+  QuantityButton,
+  QuantityValue,
+  Price,
+  RemoveButton,
+} from './checkout-item.styles';
+
+const CheckoutItem = ({ cartItem }) => {
+  const { name, imageUrl, price, quantity } = cartItem;
+
+  const dispatch = useDispatch();
+
+  return (
     <CheckoutItemContainer>
-        <ImageContainer>
-            <img src={imageUrl} alt={`${name}`} />
-        </ImageContainer>
-        <ItemDetails>{name}</ItemDetails>
+      <ImageContainer>
+        <img
+          src={imageUrl}
+          alt={name}
+        />
+      </ImageContainer>
+
+      <ItemDetails>
+        <ItemName>{name}</ItemName>
+        <ItemType>Original artwork</ItemType>
+
         <Quantity>
-            <Arrow onClick={() => dispatch(removeItemFromCart(cartitem))}>&#10094;</Arrow>
-            <Value>{quantity}</Value>
-            <Arrow onClick={() => dispatch(addItemToCart(cartitem))}>&#10095;</Arrow>
+          <QuantityButton
+            onClick={() => dispatch(removeItemFromCart(cartItem))}
+            aria-label="Decrease quantity"
+          >
+            −
+          </QuantityButton>
+
+          <QuantityValue>{quantity}</QuantityValue>
+
+          <QuantityButton
+            onClick={() => dispatch(addItemToCart(cartItem))}
+            aria-label="Increase quantity"
+          >
+            +
+          </QuantityButton>
         </Quantity>
-        <ItemDetails>${price}</ItemDetails>
-        <RemoveButton onClick={() => dispatch(clearItemFromCart(cartitem))}>
-            &#10005;
-        </RemoveButton>
+      </ItemDetails>
+
+      <Price>
+        AUD${price * quantity}
+      </Price>
+
+      <RemoveButton
+        onClick={() => dispatch(clearItemFromCart(cartItem))}
+        aria-label={`Remove ${name}`}
+      >
+        ×
+      </RemoveButton>
     </CheckoutItemContainer>
-   )
-}
+  );
+};
 
 export default CheckoutItem;

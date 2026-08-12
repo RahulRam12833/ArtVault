@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import {CartDropdownContainer,CartItems,EmptyMessage} from './cart-dropdown.styles';
