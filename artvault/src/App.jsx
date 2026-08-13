@@ -1,6 +1,6 @@
 import { useEffect} from "react";
 import { useDispatch } from "react-redux";
-
+import { Toaster } from 'react-hot-toast';
 import {Routes, Route} from "react-router-dom"
 import { onAuthStateChangedListener,createUserDocumentFromAuth,dataBase} from "./utilities/firebase/firebase.utils";
 
@@ -49,6 +49,18 @@ const App=()=> {
   
   return (
     <>
+      <Toaster
+    position="top-right"
+    toastOptions={{
+      duration: 3000,
+      style: {
+        background: 'var(--text)',
+        color: 'var(--background)',
+        fontFamily: 'DM Sans, sans-serif',
+        borderRadius: '0',
+      },
+    }}
+  />
       <Routes>
         <Route path="/" element={<Navbar/>}>
           <Route index element={<Home />}/>

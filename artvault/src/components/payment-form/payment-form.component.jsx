@@ -6,7 +6,7 @@ import {
 
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-
+import toast from 'react-hot-toast';
 import { selectCartTotal } from '../../store/cart/cart.selector';
 import { selectCurrentUser } from '../../store/user/user.selector';
 
@@ -68,7 +68,7 @@ const PaymentForm = () => {
         });
 
       if (paymentResult.error) {
-        alert(paymentResult.error.message);
+        toast.error(paymentResult.error.message);
         return;
       }
 
@@ -76,11 +76,11 @@ const PaymentForm = () => {
         paymentResult.paymentIntent.status ===
         'succeeded'
       ) {
-        alert('Payment Successful');
+        toast.success('Payment Successful');
       }
     } catch (error) {
       console.error('Payment failed:', error);
-      alert('Something went wrong with the payment.');
+      toast.error('Something went wrong with the payment.');
     } finally {
       setIsProcessingPayment(false);
     }
