@@ -1,6 +1,6 @@
 import { useState} from "react";
-
-
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import FormInput from "../form-input/form-input.component";
 import Button,{BUTTON_TYPES} from "../button/button.component";
 
@@ -14,7 +14,7 @@ const defaultFormFields = {
 } 
 
 const SignInForm = () => {
-
+    const navigate = useNavigate();
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password} = formFields;
 
@@ -26,7 +26,7 @@ const SignInForm = () => {
 
     const signInWithGoogle = async () => {
         await signInWithGooglePopup();
-         
+        navigate('/shop');
     }
 
     const handleSubmit = async (event) => {
@@ -36,12 +36,14 @@ const SignInForm = () => {
             await signInAuthUserWithEmailAndPassword(email, password);
             
             resetFormFields();
+            toast.success('Welcome back!');
+            navigate('/shop');
         } 
         catch (error) 
         {
             if(error.code === 'auth/invalid-credential') 
                 {
-                alert('Invalid credentials. Please try again.');
+                toast.error('Invalid credentials. Please try again.');
                 console.error("Error signing in", error);
                  }
         }

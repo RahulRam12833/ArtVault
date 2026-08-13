@@ -3,10 +3,11 @@ import { useState } from "react";
 
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
-
+import toast from 'react-hot-toast';
 import { createAuthUserWithEmailAndPwd ,createUserDocumentFromAuth } from "../../utilities/firebase/firebase.utils";
 import { updateProfile } from "firebase/auth";
 import {SignUpFormContainer} from './sign-up-form.styles';
+import { useNavigate } from 'react-router-dom';
 
 const defaultFormFields = {
     displayName: '',
@@ -19,7 +20,7 @@ const SignUpForm = () => {
 
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { displayName, email, password, confirmPassword } = formFields;
-
+    const navigate = useNavigate();
     
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
@@ -30,29 +31,30 @@ const SignUpForm = () => {
 
         // Check if password and confirmPassword match
         if (password !== confirmPassword) {
-            alert("Passwords do not match");
+             toast.error('Passwords do not match');
             return;
         }
 
         try {
-            // Create a new user with email and password
             const { user } = await createAuthUserWithEmailAndPwd(email, password);
 
-            // Update displayName in Firebase Auth user profile
             await updateProfile(user, { displayName });
 
-            // You can add additional logic here, like creating a user document in Firestore
             await createUserDocumentFromAuth(user, {displayName });
 
             
             // Reset the form fields after successful signup
             resetFormFields();
+           toast.success(`Welcome to ArtVault, ${displayName}!`);
+
+            navigate('/shop');
+
         } catch (error) {
            if(error.code === 'auth/email-already-in-use') {
-                alert('Email already in use. Please use a different email.');
+                toast.error('Email already in use.');
             }
             else{
-                console.error("Error creating user", error);
+                toast.error('Unable to create your account. Please try again.');
             }
         }
     }

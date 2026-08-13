@@ -9,7 +9,7 @@ import { selectCurrentUser } from '../../store/user/user.selector';
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 import { signOutUser } from '../../utilities/firebase/firebase.utils';
 
-import {NavbarContainer,LogoContainer,NavLinksContainer,NavLink,LogoText,LogoImage} from './navigation.styles';
+import {NavbarContainer,LogoContainer,NavLinksContainer,NavLink,LogoText,LogoImage,UserName} from './navigation.styles';
 import Footer from '../../components/footer/footer.component';
 
 const Navbar=()=>{
@@ -24,7 +24,21 @@ const Navbar=()=>{
         
         <NavLinksContainer>
           <NavLink  to='/shop'>EXPLORE</NavLink>
-          {currentUser?(<NavLink as='span' onClick={signOutUser}>SIGN OUT</NavLink>):(<NavLink  to='/auth'>SIGN IN</NavLink>)}
+          {currentUser ? (
+  <>
+    <UserName>
+      {currentUser.displayName}
+    </UserName>
+
+    <NavLink as="span" onClick={signOutUser}>
+      SIGN OUT
+    </NavLink>
+  </>
+) : (
+  <NavLink to="/auth">
+    SIGN IN
+  </NavLink>
+)}
           <CartIcon/>
         </NavLinksContainer>
         {isCartOpen && <CartDropdown />} 

@@ -98,3 +98,12 @@ export const NavLink = styled(Link)`
     transform: scaleX(1);
   }
 `;
+
+export const UserName = styled.span`
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+ text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight:500;
+  color: var(--muted);
+`;

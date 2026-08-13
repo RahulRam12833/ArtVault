@@ -1,8 +1,9 @@
 import { useEffect} from "react";
 import { useDispatch } from "react-redux";
-
+import { Toaster } from 'react-hot-toast';
 import {Routes, Route} from "react-router-dom"
 import { onAuthStateChangedListener,createUserDocumentFromAuth,dataBase} from "./utilities/firebase/firebase.utils";
+import ScrollToTop from './components/scroll-to-top/scroll-to-top.component';
 
 import Home from "./routes/home/home.component"
 import Navbar from "./routes/navigation/navigation.component"
@@ -49,6 +50,19 @@ const App=()=> {
   
   return (
     <>
+      <Toaster
+    position="top-right"
+    toastOptions={{
+      duration: 3000,
+      style: {
+        background: 'var(--text)',
+        color: 'var(--background)',
+        fontFamily: 'DM Sans, sans-serif',
+        borderRadius: '0',
+      },
+    }}
+  />
+  <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Navbar/>}>
           <Route index element={<Home />}/>
